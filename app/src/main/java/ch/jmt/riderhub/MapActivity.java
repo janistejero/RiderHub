@@ -72,11 +72,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        /*
-        double[] coordinates = getCurrentLocation();
-        LatLng currentLatLng = new LatLng(coordinates[0], coordinates[1]);
-        mMap.addMarker(new MarkerOptions().position(currentLatLng).title("Your Location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLatLng));*/
     }
 
     private void updateLocationUI() {
@@ -99,10 +94,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     }
 
     private void getDeviceLocation() {
-        /*
-         * Get the best and most recent location of the device, which may be null in rare
-         * cases when a location is not available.
-         */
         try {
             if (locationPermissionGranted) {
                 Task<Location> locationResult = flpClient.getLastLocation();
@@ -132,28 +123,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         }
     }
 
-    private double[] getCurrentLocation() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            Log.d("erlaubnis:", "no permission F");
-
-            return null;
-        }
-
-        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        String locationProvider = LocationManager.NETWORK_PROVIDER;
-        android.location.Location lastKnownLocation = locationManager.getLastKnownLocation(locationProvider);
-        double userLat = lastKnownLocation.getLatitude();
-        double userLong = lastKnownLocation.getLongitude();
-        Log.d("Coordinates:", "long:" + String.valueOf(userLat) + " long:" + String.valueOf(userLong));
-        return new double[]{userLat, userLong};
-    }
-
     private void getLocationPermission() {
-        /*
-         * Request location permission, so that we can get the location of the
-         * device. The result of the permission request is handled by a callback,
-         * onRequestPermissionsResult.
-         */
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {

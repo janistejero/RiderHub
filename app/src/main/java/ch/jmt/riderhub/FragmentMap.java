@@ -83,7 +83,7 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback{
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        getCurrentLocation();
+        getLocationPermission();
         if(currentLocation != null) {
             latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         }
@@ -114,14 +114,10 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback{
                         if(location != null){
                             currentLocation = location;
                             textView3.setText(String.valueOf(String.format(Locale.US, "%s -- %s", location.getLatitude(), location.getLongitude())));
-                            // sync map
                             mapView.getMapAsync(new OnMapReadyCallback() {
                                 @Override
                                 public void onMapReady(GoogleMap googleMap) {
-                                    // init lat lng
                                     LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-
-                                    // create marker options
                                     MarkerOptions options = new MarkerOptions().position(latLng).title("My location");
                                     googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                                     googleMap.addMarker(options);
@@ -181,11 +177,6 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback{
     }
 
     private void getLocationPermission() {
-        /*
-         * Request location permission, so that we can get the location of the
-         * device. The result of the permission request is handled by a callback,
-         * onRequestPermissionsResult.
-         */
         if (ContextCompat.checkSelfPermission(getActivity(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -208,6 +199,7 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback{
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     locationPermissionGranted = true;
+                    getCurrentLocation();
                 }
             }
         }

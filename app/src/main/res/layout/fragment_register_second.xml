@@ -7,22 +7,27 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/setupTitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second Fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/setup_your_profile"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
 
     <Button
-        android:id="@+id/loadMain"
+        android:id="@+id/loginBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Load Main"
+        android:layout_marginBottom="84dp"
+        android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

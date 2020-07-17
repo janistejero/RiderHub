@@ -20,12 +20,12 @@
         <menu>
             <item
                 android:id="@+id/profile"
-                android:icon="@drawable/ic_baseline_home_24"
-                android:title="@string/home" />
+                android:icon="@drawable/ic_baseline_perm_identity_24"
+                android:title="@string/profile" />
             <item
                 android:id="@+id/settings"
-                android:icon="@drawable/ic_baseline_map_24"
-                android:title="@string/map" />
+                android:icon="@drawable/ic_baseline_settings_24"
+                android:title="@string/settings" />
         </menu>
     </item>
 </menu>

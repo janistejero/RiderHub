@@ -25,7 +25,7 @@
     <TextView
         android:id="@+id/usernameLabel"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="35dp"
         android:text="@string/userLabel"
         android:textAlignment="textStart"
         android:textAllCaps="false"
@@ -41,7 +41,7 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="35dp"
         android:text="@string/passwordLabel"
         android:textAlignment="textStart"
         android:textAllCaps="false"
@@ -65,10 +65,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editTextPassword"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.596"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -99,10 +99,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.766"
+        app:layout_constraintHorizontal_bias="0.767"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <Button
         android:id="@+id/registerNextBtn"

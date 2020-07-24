@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/rideout_create_name"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="6dp"
+        android:hint="Season Ending 2020" />
+
+    <DatePicker
+        android:id="@+id/rideoutDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15px"
+        android:visibility="gone"></DatePicker>
+
+    <TimePicker
+        android:id="@+id/rideoutTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15px"
+        android:visibility="gone"></TimePicker>
+
+    <ImageButton
+        android:id="@+id/rideoutCreateDateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showDatePicker"
+        android:src="@drawable/ic_baseline_date_range_24"
+        android:tint="#3F51B5"
+        tools:srcCompat="@drawable/ic_baseline_date_range_24" />
+
+    <ImageButton
+        android:id="@+id/rideoutCreateTimeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showTimePicker"
+        android:tint="#3F51B5"
+        app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+</LinearLayout>

@@ -9,9 +9,13 @@
                 android:icon="@drawable/ic_baseline_home_24"
                 android:title="@string/home" />
             <item
-                android:id="@+id/map"
-                android:icon="@drawable/ic_baseline_map_24"
-                android:title="@string/map" />
+            android:id="@+id/map"
+            android:icon="@drawable/ic_baseline_map_24"
+            android:title="@string/map" />
+            <item
+                android:id="@+id/rideout"
+                android:icon="@drawable/ic_baseline_people_24"
+                android:title="@string/rideout" />
         </menu>
     </item>
 
